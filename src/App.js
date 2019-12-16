@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 //import components
-import Search from './components/Search'
+import Search from './components/Search';
+import List from './components/List';
 //import services
 import { API_search } from './services/api-helper';
 import { API_id } from './services/api-helper';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 
 
 class App extends Component {
@@ -18,11 +20,12 @@ class App extends Component {
 	}
 	searchSubmit = async (e) => {
 		e.preventDefault();
-		const result = await API_search(this.state.search)
-		//console.log(result.Search);
+		const result = await API_search(this.state.search);
+		console.log(result.Search);
 		this.setState({
 			results: result.Search
-		})
+		});
+
 
 	}
 	searchChange = (e) => {
@@ -33,7 +36,14 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Search onSubmit={this.searchSubmit} onChange={this.searchChange} />
+				<Switch>
+					<Redirect exact from="/" to="/search" />
+					<Route render={() =>
+						<div>
+							<Search onSubmit={this.searchSubmit} onChange={this.searchChange} />
+						</div>
+					} />
+				</Switch>
 			</div>
 		);
 	}
