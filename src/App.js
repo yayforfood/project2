@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-
 import './App.css';
-import axios from 'axios';
+//import components
+
+//import services
+import { Search } from './services/api-helper';
 
 class App extends Component {
 	async componentDidMount() {
-		console.log(await (axios.get("http://www.omdbapi.com/?i=tt0092455&apikey=2e6c17f5&season=1")))
+		console.log(process.env.REACT_APP_API_KEY);
+		console.log(await Search("Star Trek next Generation"))
+		//process.env.REACT_APP_API_KEY
 	}
 	render() {
 		return (
