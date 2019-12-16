@@ -38,9 +38,10 @@ class App extends Component {
 			<div className="App">
 				<Switch>
 					<Redirect exact from="/" to="/search" />
-					<Route render={() =>
+					<Route path="/search" render={() =>
 						<div>
 							<Search onSubmit={this.searchSubmit} onChange={this.searchChange} />
+							<List items={this.state.results} />
 						</div>
 					} />
 				</Switch>
