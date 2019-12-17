@@ -5,7 +5,6 @@ import Search from './components/Search';
 import List from './components/List';
 import Movie from './components/Movie';
 //import services
-import { API_search, API_id } from './services/api-helper';
 import { withRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 
@@ -13,18 +12,12 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			results: [],
-			data: {},
 			search: "",
 		}
 	}
 	searchSubmit = async (e) => {
 		e.preventDefault();
-		const result = await API_search(this.state.search);
 		this.props.history.push(`/search/${this.state.search}`);
-		this.setState({
-			results: result.Search
-		});
 
 
 	}
@@ -50,14 +43,10 @@ class App extends Component {
 						<Movie imdbID={props.match.params.imdbID} />
 
 					} />
-					<Route path="/search/:term" render={async (props) => {
-						const result = await API_search(this.props.match.term);
-						return (
-							<div>
-								<List items={result.Search} />
-							</div>
-						)
-					}} />
+					<Route path="/search/:term" render={(props) => {
+						return <List search={props.match.params.term} />;
+					}
+					} />
 				</Switch>
 			</div>
 		);
