@@ -9,7 +9,15 @@ class List extends Component {
             items: [],
         };
     }
-    async componentDidUpdate() {
+    componentDidMount() {
+        this.loadList()
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.search !== prevProps.search) {
+            this.loadList()
+        }
+    }
+    loadList = async () => {
         const response = await API_search(this.props.search);
         this.setState({
             items: response.Search,

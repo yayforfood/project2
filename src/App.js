@@ -43,9 +43,8 @@ class App extends Component {
 						<Movie imdbID={props.match.params.imdbID} />
 
 					} />
-					<Route path="/search/:term" render={(props) => {
-						return <List search={props.match.params.term} />;
-					}
+					<Route path="/search/:term" render={(props) =>
+						<List search={props.match.params.term} />
 					} />
 				</Switch>
 			</div>
