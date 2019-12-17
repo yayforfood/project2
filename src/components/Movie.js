@@ -15,10 +15,15 @@ export default class Movie extends Component {
     }
     render() {
         console.log(this.state.data);
-        return (
-            <div>
-                <h1>{this.state.data && this.state.data.Title}</h1>
-            </div>
-        )
+        if (this.state.data) {
+            return (
+                < div >
+                    <h1>{this.state.data.Title}</h1>
+                    <img src={this.state.data.Poster} />
+                </div >
+            )
+        } else {
+            return <p>Loading...</p>
+        }
     }
 }
