@@ -25,4 +25,18 @@
 a { 
   color: inherit;
   text-decoration: none;
-} 
+}
+.movie{
+
+  padding:1vw;
+}
+.movie-data{
+  text-align: left;
+  /* border: 1px solid red; */
+  overflow: auto;
+}
+.movie-data img{
+  float: left;
+  margin:1vw;
+  width:20vw;
+}

@@ -18,8 +18,6 @@ class App extends Component {
 	searchSubmit = async (e) => {
 		e.preventDefault();
 		this.props.history.push(`/search/${this.state.search}`);
-
-
 	}
 	searchChange = (e) => {
 		this.setState({

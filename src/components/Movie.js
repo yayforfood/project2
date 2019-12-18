@@ -17,9 +17,22 @@ export default class Movie extends Component {
         console.log(this.state.data);
         if (this.state.data) {
             return (
-                < div >
+                < div className="movie">
                     <h1>{this.state.data.Title}</h1>
-                    <img src={this.state.data.Poster} />
+                    <div className="movie-data">
+                        <img src={this.state.data.Poster} />
+                        <h2>Plot</h2>
+                        <p>{this.state.data.Plot}</p>
+                        <h2>Actors</h2>
+                        <p>{this.state.data.Actors}</p>
+                        <h2>Ratings</h2>
+                        <ul>
+                            {this.state.data.Ratings.map((rating, key) =>
+                                <li key={key}>{rating.Source}: {rating.Value}</li>
+                            )}
+                        </ul>
+                    </div>
+
                 </div >
             )
         } else {
