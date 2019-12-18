@@ -27,7 +27,7 @@ a {
   text-decoration: none;
 }
 .movie{
-
+  display: flex;
   padding:1vw;
 }
 .movie-data{
@@ -35,8 +35,7 @@ a {
   /* border: 1px solid red; */
   overflow: auto;
 }
-.movie-data img{
-  float: left;
+.movie-poster {
   margin:1vw;
-  width:20vw;
+  width:25vw;
 }
