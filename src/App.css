@@ -29,6 +29,7 @@ a {
 .movie{
   display: flex;
   padding:1vw;
+  align-items: flex-start;
 }
 .movie-data{
   text-align: left;
@@ -38,4 +39,22 @@ a {
 .movie-poster {
   margin:1vw;
   width:25vw;
+  object-fit: contain;
+}
+@media only screen and (max-width: 800px) {
+  #search-bar{
+    width: 85%;
+  }
+  .movie{
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie-poster{
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 500px){
+  .movie-poster{
+    width: 100vw;
+  }
 }
