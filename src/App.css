@@ -2,14 +2,34 @@
   text-align: center;
   font-family: 'Nunito', sans-serif;
 }
+#search-form{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+}
 #search-bar{
   font-family: inherit;
   font-size: 2rem;
   text-align: center;
-  width: 50%;
+  flex-basis: 50vw;
   line-height: 3rem;
-  border-radius: 2rem;
+  border-radius: 3rem;
   border:2px solid gray;
+  max-height: 3rem;
+}
+#submit-button{
+  font-family: inherit;
+  font-size: 2rem;
+  color: gray;
+  text-align: center;
+  line-height: 3rem;
+  border-radius: 3rem;
+  border:2px solid gray;
+  padding: 0 1rem;
+  max-height: 3rem;
+  flex-basis:10vw;
+  background-color: white;
 }
 #list{
   display: flex;
@@ -41,10 +61,10 @@ a {
   width:25vw;
   object-fit: contain;
 }
-@media only screen and (max-width: 800px) {
-  #search-bar{
-    width: 85%;
-  }
+.list-poster{
+  object-fit: contain;
+}
+@media only screen and (max-width: 900px) {
   .movie{
     flex-direction: column;
     align-items: center;
@@ -53,8 +73,16 @@ a {
     width: 50vw;
   }
 }
-@media only screen and (max-width: 500px){
-  .movie-poster{
+@media only screen and (max-width: 600px){
+  .movie-poster, .list-poster{
     width: 100vw;
+  }
+  #search-form{
+    flex-direction: column;
+    align-items: center;
+
+  }
+  #search-bar,#submit-button{
+    width:80vw;
   }
 }

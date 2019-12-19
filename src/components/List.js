@@ -26,14 +26,15 @@ class List extends Component {
     render() {
         return (
             <div id="list">
-                {this.state.items.map((item, key) =>
+                {this.state.items ? this.state.items.map((item, key) =>
                     <div key={key} className="list-movie">
                         <Link to={`/id/${item.imdbID}`}>
                             <h1>{item.Title}</h1>
-                            <img src={item.Poster} />
+                            {item.Poster!=="N/A"&&<img className="list-poster" src={item.Poster} />}
                         </Link>
                     </div>
-                )
+                ) :
+                    <h1>No results found</h1>
                 }
             </div >
         )

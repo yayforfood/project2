@@ -1,7 +1,7 @@
 import React from 'react';
 function Search(props) {
     return (
-        <form onSubmit={props.onSubmit}>
+        <form id="search-form" onSubmit={props.onSubmit}>
             <input
                 id="search-bar"
                 type="text"
@@ -9,7 +9,7 @@ function Search(props) {
                 onChange={props.onChange}
                 value={props.value}
             />
-            
+            <input id="submit-button" type="submit" />
         </form>
     )
 }
