@@ -19,7 +19,7 @@ export default class Movie extends Component {
             if (this.state.data.Response === "True") {
                 return (
                     <div>
-                        <h1>{this.state.data.Title}</h1>
+                        <h1>{this.state.data.Title} ({this.state.data.Year})</h1>
                         < div className="movie">
                             {this.state.data.Poster !== "N/A" && <img
                                 className="movie-poster"

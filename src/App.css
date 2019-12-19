@@ -6,30 +6,34 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  
 
 }
 #search-bar{
   font-family: inherit;
   font-size: 2rem;
   text-align: center;
-  flex-basis: 50vw;
-  line-height: 3rem;
-  border-radius: 3rem;
-  border:2px solid gray;
-  max-height: 3rem;
+  width:50vw;
+  /* flex-basis: content; */
+  height: 48px;
+  border: 2px solid grey;
+  padding: 0;
+  margin: 0;
+  border-radius:3rem;
+  outline:none;
 }
 #submit-button{
+  -webkit-appearance: none;
   font-family: inherit;
   font-size: 2rem;
-  color: gray;
-  text-align: center;
-  line-height: 3rem;
-  border-radius: 3rem;
-  border:2px solid gray;
-  padding: 0 1rem;
-  max-height: 3rem;
-  flex-basis:10vw;
-  background-color: white;
+  color: black;
+  background-color: white !important;
+  border: 2px solid grey;
+  height: calc(3rem+2px);
+  padding:0 1%;
+  margin:0;
+  border-radius:3rem;
+  outline:none;
 }
 #list{
   display: flex;
