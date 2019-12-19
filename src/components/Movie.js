@@ -20,23 +20,27 @@ export default class Movie extends Component {
                 <div>
                     <h1>{this.state.data.Title}</h1>
                     < div className="movie">
-                        <img
+                        {this.state.data.Poster !== "N/A" && <img
                             className="movie-poster"
                             src={this.state.data.Poster}
                             alt={this.state.data.Title}
-                        />
+                        />}
                         <div className="movie-data">
 
                             <h2>Plot</h2>
                             <p>{this.state.data.Plot}</p>
-                            <h2>Actors</h2>
-                            <p>{this.state.data.Actors}</p>
+                            <h2>People</h2>
+                            <p>Director(s): {this.state.data.Director}</p>
+                            <p>Writer(s): {this.state.data.Writer}</p>
+                            <p>Actors: {this.state.data.Actors}</p>
                             <h2>Ratings</h2>
                             <ul>
-                                {this.state.data.Ratings.map((rating, key) =>
+                                {this.state.data.Ratings && this.state.data.Ratings.map((rating, key) =>
                                     <li key={key}>{rating.Source}: {rating.Value}</li>
                                 )}
                             </ul>
+                            <h2>Other Info</h2>
+                            <p>Released: {this.state.data.Released}</p>
                         </div>
 
                     </div >
