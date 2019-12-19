@@ -24,12 +24,14 @@ class List extends Component {
         })
     }
     render() {
+        console.log(this.state.items);
+
         return (
             <div id="list">
                 {this.state.items ? this.state.items.map((item, key) =>
                     <div key={key} className="list-movie">
                         <Link to={`/id/${item.imdbID}`}>
-                            <h1>{item.Title}</h1>
+                            <h1>{item.Title} ({item.Year})</h1>
                             {item.Poster !== "N/A" &&
                                 <img
                                     className="list-poster"
