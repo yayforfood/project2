@@ -41,6 +41,7 @@ export default class Movie extends Component {
                             </ul>
                             <h2>Other Info</h2>
                             <p>Released: {this.state.data.Released}</p>
+                            <p>Runtime: {this.state.data.Runtime}</p>
                         </div>
 
                     </div >
