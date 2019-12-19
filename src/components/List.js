@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { API_search, API_id } from '../services/api-helper';
+import { API_search } from '../services/api-helper';
 
 class List extends Component {
     constructor(props) {
@@ -30,7 +30,12 @@ class List extends Component {
                     <div key={key} className="list-movie">
                         <Link to={`/id/${item.imdbID}`}>
                             <h1>{item.Title}</h1>
-                            {item.Poster!=="N/A"&&<img className="list-poster" src={item.Poster} />}
+                            {item.Poster !== "N/A" &&
+                                <img
+                                    className="list-poster"
+                                    src={item.Poster}
+                                    alt={item.Title}
+                                />}
                         </Link>
                     </div>
                 ) :

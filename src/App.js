@@ -5,7 +5,7 @@ import Search from './components/Search';
 import List from './components/List';
 import Movie from './components/Movie';
 //import services
-import { withRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
 class App extends Component {

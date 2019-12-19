@@ -20,7 +20,11 @@ export default class Movie extends Component {
                 <div>
                     <h1>{this.state.data.Title}</h1>
                     < div className="movie">
-                        <img className="movie-poster" src={this.state.data.Poster} />
+                        <img
+                            className="movie-poster"
+                            src={this.state.data.Poster}
+                            alt={this.state.data.Title}
+                        />
                         <div className="movie-data">
 
                             <h2>Plot</h2>
