@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { API_id } from '../services/api-helper';
+import { Link } from 'react-router-dom';
+
 export default class Movie extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +14,14 @@ export default class Movie extends Component {
         this.setState({
             data: response
         })
+    }
+    renderSeasons = () => {
+        let seasons = [];
+        for (let i = 1; i <= this.state.data.totalSeasons; i++) {
+            seasons.push(<Link key={i} to="">{i}</Link>);
+        }
+        console.log(seasons);
+        return seasons;
     }
     render() {
         console.log(this.state.data);
@@ -46,6 +56,13 @@ export default class Movie extends Component {
                             </div>
 
                         </div >
+                        {this.state.data.Type === "series" ?
+                            <div className="season-list">
+                                {
+                                    this.renderSeasons()
+                                }
+                            </div> : null
+                        }
                     </div>
                 )
             } else {
