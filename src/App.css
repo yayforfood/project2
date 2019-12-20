@@ -68,6 +68,16 @@ a {
 .list-poster{
   object-fit: contain;
 }
+.season-list{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.season-list a{
+  font-size:2rem;
+  margin: 1vw;
+}
+
 @media only screen and (max-width: 900px) {
   .movie{
     flex-direction: column;

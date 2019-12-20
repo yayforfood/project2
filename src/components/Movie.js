@@ -57,11 +57,15 @@ export default class Movie extends Component {
 
                         </div >
                         {this.state.data.Type === "series" ?
-                            <div className="season-list">
-                                {
-                                    this.renderSeasons()
-                                }
+                            <div>
+                                <h2>Seasons</h2>
+                                <div className="season-list">
+                                    {
+                                        this.renderSeasons()
+                                    }
+                                </div>
                             </div> : null
+
                         }
                     </div>
                 )
