@@ -23,7 +23,6 @@ export default class Movie extends Component {
         return seasons;
     }
     render() {
-        console.log(this.state.data);
         if (this.state.data) {
             if (this.state.data.Response === "True") {
                 return (

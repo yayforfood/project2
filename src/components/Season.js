@@ -26,9 +26,6 @@ export default class Season extends Component {
     }
     render() {
         if (this.state.data) {
-            console.log(this.state.data)
-            console.log();
-            console.log();
             
             if (this.state.data.Response === "True") {
                 return (
