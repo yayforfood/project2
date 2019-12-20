@@ -9,13 +9,26 @@
   
 
 }
+.button-div button{
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: black;
+  background-color: white !important;
+  border: 2px solid grey;
+  height: calc(2rem+2px);
+  padding:0 1rem;
+  margin:1vw;
+  border-radius:2rem;
+  outline:none;
+}
 #search-bar{
   font-family: inherit;
   font-size: 2rem;
   text-align: center;
   width:50vw;
   /* flex-basis: content; */
-  height: 48px;
+  height: 3rem;
   border: 2px solid grey;
   padding: 0;
   margin: 0;
