@@ -45,6 +45,7 @@ class List extends Component {
             <div id="list">
                 <div className='button-div'>
                     <button id="prev" onClick={() => this.changePage(-1)}>prev</button>
+                    <span>Page {this.state.page} of {this.state.pages}</span>
                     <button id="next" onClick={() => this.changePage(1)}>next</button>
                 </div>
                 {this.state.items ? this.state.items.map((item, key) =>
@@ -64,6 +65,7 @@ class List extends Component {
                 }
                 <div className='button-div'>
                     <button id="prev" onClick={() => this.changePage(-1)}>prev</button>
+                    <span>Page {this.state.page} of {this.state.pages}</span>
                     <button id="next" onClick={() => this.changePage(1)}>next</button>
                 </div>
             </div >
