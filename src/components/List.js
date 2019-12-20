@@ -27,19 +27,19 @@ class List extends Component {
         const response = await API_search(this.props.search, this.state.page);
         this.setState({
             items: response.Search,
+            pages: Math.ceil(response.totalResults / 10),
         })
     }
     changePage = async (change) => {
-        console.log(this.state.page + " before");
-        await this.setState((state) => ({
-            page: state.page + change
-        }))
-        console.log(this.state.page + " after");
+        if (this.state.page + change >= 1 && this.state.page + change <= this.state.pages) {
+            await this.setState((state) => ({//await needed!!!!
+                page: state.page + change
+            }))
+        }
 
         this.loadList();
     }
     render() {
-        console.log(this.state.items);
 
         return (
             <div id="list">
