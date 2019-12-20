@@ -8,6 +8,7 @@ class List extends Component {
         this.state = {
             items: [],
             page: 1,
+            pages: 0,
         };
     }
     componentDidMount() {
@@ -22,17 +23,19 @@ class List extends Component {
             this.loadList()
         }
     }
-    loadList = async (page = this.state.page) => {
-        console.log(page);
-        const response = await API_search(this.props.search, page);
+    loadList = async () => {
+        const response = await API_search(this.props.search, this.state.page);
         this.setState({
             items: response.Search,
         })
     }
-    changePage = (change) => {
-        this.setState((state)=> ({
-            page:state.page+change
+    changePage = async (change) => {
+        console.log(this.state.page + " before");
+        await this.setState((state) => ({
+            page: state.page + change
         }))
+        console.log(this.state.page + " after");
+
         this.loadList();
     }
     render() {
@@ -40,6 +43,10 @@ class List extends Component {
 
         return (
             <div id="list">
+                <div className='button-div'>
+                    <button id="prev" onClick={() => this.changePage(-1)}>prev</button>
+                    <button id="next" onClick={() => this.changePage(1)}>next</button>
+                </div>
                 {this.state.items ? this.state.items.map((item, key) =>
                     <div key={key} className="list-movie">
                         <Link to={`/id/${item.imdbID}`}>
@@ -55,6 +62,10 @@ class List extends Component {
                 ) :
                     <h1>No results found</h1>
                 }
+                <div className='button-div'>
+                    <button id="prev" onClick={() => this.changePage(-1)}>prev</button>
+                    <button id="next" onClick={() => this.changePage(1)}>next</button>
+                </div>
             </div >
         )
     }
