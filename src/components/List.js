@@ -7,6 +7,7 @@ class List extends Component {
         super(props);
         this.state = {
             items: [],
+            page: 1,
         };
     }
     componentDidMount() {
@@ -14,15 +15,21 @@ class List extends Component {
     }
     componentDidUpdate(prevProps) {
         if (this.props.search !== prevProps.search) {
+
+            this.setState((state) => ({
+                page: 1
+            }))
             this.loadList()
         }
     }
-    loadList = async () => {
-        const response = await API_search(this.props.search);
+    loadList = async (page = this.state.page) => {
+        console.log(page);
+        const response = await API_search(this.props.search, page);
         this.setState({
             items: response.Search,
         })
     }
+    
     render() {
         console.log(this.state.items);
 
