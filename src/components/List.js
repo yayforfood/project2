@@ -14,10 +14,10 @@ class List extends Component {
     componentDidMount() {
         this.loadList()
     }
-    componentDidUpdate(prevProps) {
+    async componentDidUpdate(prevProps) {
         if (this.props.search !== prevProps.search) {
 
-            this.setState((state) => ({
+            await this.setState((state) => ({
                 page: 1
             }))
             this.loadList()
