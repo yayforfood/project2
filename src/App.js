@@ -41,7 +41,7 @@ class App extends Component {
 					<Route path="/id/:imdbID/:season" render={(props) =>
 						<Season
 							imdbID={props.match.params.imdbID}
-							season={props.match.params.imdbID}
+							season={props.match.params.season}
 						/>
 
 					} />

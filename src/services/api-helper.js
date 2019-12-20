@@ -11,4 +11,5 @@ export const API_id = async (i) => {
 }
 export const API_season = async (i, season) => {
     const response = await axios.get(`http://www.omdbapi.com/?apikey=${key}&i=${i}&season=${season}`)
+    return response.data;
 }

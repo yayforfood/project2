@@ -8,13 +8,7 @@ export default class Season extends Component {
             data: {}
         }
     }
-    loadList = async () => {
-        const response = await API_season(this.props.imdbID, this.props.season);
-        this.setState({
-            data: response,
-            
-        })
-    }
+
     componentDidMount() {
         this.loadList()
     }
@@ -23,18 +17,31 @@ export default class Season extends Component {
             this.loadList()
         }
     }
+    loadList = async () => {
+        const response = await API_season(this.props.imdbID, this.props.season);
+        this.setState({
+            data: response,
+
+        })
+    }
     render() {
         if (this.state.data) {
-            return (
-                <div>
-                    <h1>{this.state.data.Title} Season {this.state.data.Season}</h1>
-                    {this.state.data.Episodes && this.state.data.Episodes.map((episode, key) =>
-                        <div key={key}>
-                            <Link to={`/id/${episode.imdbID}`}><h2>{episode.Title}</h2></Link>
-                        </div>
-                    )}
-                </div>
-            )
+            if (this.state.data.Response === "True") {
+                return (
+                    <div>
+                        <h1>{this.state.data.Title} Season {this.state.data.Season}</h1>
+                        {this.state.data.Episodes && this.state.data.Episodes.map((episode, key) =>
+                            <div key={key}>
+                                <Link to={`/id/${episode.imdbID}`}><h2>{episode.Title}</h2></Link>
+                            </div>
+                        )}
+                    </div>
+                )
+            } else {
+                return <p>{this.state.data.Error}</p>
+            }
+        } else {
+            return <p>Loading...</p>
         }
     }
 }

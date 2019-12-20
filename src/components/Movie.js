@@ -20,7 +20,6 @@ export default class Movie extends Component {
         for (let i = 1; i <= this.state.data.totalSeasons; i++) {
             seasons.push(<Link key={i} to={`/id/${this.state.imdbID}/${i}`}>{i}</Link>);
         }
-        console.log(seasons);
         return seasons;
     }
     render() {
