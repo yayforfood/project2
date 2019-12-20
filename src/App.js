@@ -37,6 +37,10 @@ class App extends Component {
 							<List items={this.state.results} />
 						</div>
 					} /> */}
+					<Route path="/id/:imdbID/:season" render={(props) =>
+						<Movie imdbID={props.match.params.imdbID} />
+
+					} />
 					<Route path="/id/:imdbID" render={(props) =>
 						<Movie imdbID={props.match.params.imdbID} />
 
