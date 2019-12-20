@@ -29,7 +29,12 @@ class List extends Component {
             items: response.Search,
         })
     }
-    
+    changePage = (change) => {
+        this.setState((state)=> ({
+            page:state.page+change
+        }))
+        this.loadList();
+    }
     render() {
         console.log(this.state.items);
 
