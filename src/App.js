@@ -39,7 +39,10 @@ class App extends Component {
 						</div>
 					} /> */}
 					<Route path="/id/:imdbID/:season" render={(props) =>
-						<Season imdbID={props.match.params.imdbID} />
+						<Season
+							imdbID={props.match.params.imdbID}
+							season={props.match.params.imdbID}
+						/>
 
 					} />
 					<Route path="/id/:imdbID" render={(props) =>
